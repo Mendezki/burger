@@ -1,0 +1,11 @@
+body {
+    background: darkseagreen
+}
+.jumbotron {
+    background-color: black;
+    background-image: url("../img/beef-bread-bun-161675.jpg");
+    background-repeat: no-repeat;
+    background-size: 350px;
+    background-position: right;
+    color: white;
+}
