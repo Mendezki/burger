@@ -2,25 +2,55 @@
     <div class="jumbotron" id="tagline">
         <h1>Burger eater</h1>
         <br>
-        <h4>Select a burger or create your own</h4>
+        <h4>Create your own burger</h4>
     </div>
-    <panel>
-        <form class="create-form">
-            <div class="form-group">
-                <label for="selectBurger"></label>
-                    <select class="form-control" id="burgerSelection">
-                        <option value="No Selection">Please Select a Hamburger</option>
-                        <option>Ricky Bobby</option>
-                        <option>Kiwiburger</option>
-                        <option>Jalapeno Cheeseburger</option>
-                        <option>Toro Burger</option>
-                        <option>Veggimate Soy Burger</option>
-                        <option>Seitanic Burger</option>
-                        <option>Half a pound Burger</option>
-                        <option>Southwestern Burger</option>
-                        <option>Smith Avocado Sandwich</option>
-                    </select>
-            </div>
-        </form>
-    </panel>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-default" id="right">
+      <div class="panel-heading"><h4><strong>Burgers ready to be eaten</strong></h4>
+        <p>Select the burger you will devour</p>
+      </div>
+        <ul>
+          {{#each burgers}}
+            {{#unless devoured}}
+              {{> burger/burger-block devoured=false}}
+            {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+  </div>
+  <div class="col-sm-6">
+      <div class="panel panel-default" id="left">
+        <div class="panel-heading"><h4><strong>Devoured Burgers</strong></h4>
+        <p>Delete or send back the devoured orders</p>
+        </div>
+          <ul>
+            {{#each burgers}}
+              {{#if devoured}}
+                {{> burger/burger-block devoured=true}}
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+    </div>
+</div>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burgern">Burger Name:</label>
+    <input type="text" id="burgern" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="devoured">Devour it</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Save it for later
+  </div>
+
+  <button class="btn btn-light" type="submit">Add Burger</button>
+</form>
+
 </div>
