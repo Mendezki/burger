@@ -1,56 +1,57 @@
 <div class="container">
-    <div class="jumbotron" id="tagline">
-        <h1>Burger eater</h1>
-        <br>
-        <h4>Create your own burger</h4>
-    </div>
+  <div class="jumbotron" id="tagline">
+      <h1>Burger eater</h1>
+      <br>
+      <h4>Create your own burger</h4>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-sm-6">
+      <div class="panel panel-default" id="right">
+        <div class="panel-heading"><h2><strong>Add a burger</strong></h2></div>
+          <form class="create-form">
+            
+            <div class="form-group"> <br>
+              <label for="new-burger">Burger Name:</label>
+              <input type="text" id="new-burger" name="name">
+                      <button class="btn btn-light" type="submit">Add Burger</button>
+            </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel panel-default" id="right">
-      <div class="panel-heading"><h4><strong>Burgers ready to be eaten</strong></h4>
-        <p>Select the burger you will devour</p>
+          </form>
       </div>
-        <ul>
-          {{#each burgers}}
-            {{#unless devoured}}
-              {{> burger/burger-block devoured=false}}
-            {{/unless}}
-          {{/each}}
-        </ul>
     </div>
   </div>
-  <div class="col-sm-6">
-      <div class="panel panel-default" id="left">
-        <div class="panel-heading"><h4><strong>Devoured Burgers</strong></h4>
-        <p>Delete or send back the devoured orders</p>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default" id="right">
+        <div class="panel-heading"><h4><strong>Burgers ready to be eaten</strong></h4>
+          <p>Select the burger you will devour</p>
         </div>
+        <br>
           <ul>
             {{#each burgers}}
-              {{#if devoured}}
-                {{> burger/burger-block devoured=true}}
-              {{/if}}
+              {{#unless devoured}}
+                {{> burger/burger-block devoured=false}}
+              {{/unless}}
             {{/each}}
           </ul>
-        </div>
+      </div>
     </div>
-</div>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burgern">Burger Name:</label>
-    <input type="text" id="burgern" name="name">
+    <div class="col-sm-6">
+        <div class="panel panel-default" id="left">
+          <div class="panel-heading"><h4><strong>Devoured Burgers</strong></h4>
+          <p>Trash it or save the leftovers</p>
+          </div>
+          <br>
+            <ul>
+              {{#each burgers}}
+                {{#if devoured}}
+                  {{> burger/burger-block devoured=true}}
+                {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+      </div>
   </div>
-
-  <div class="form-group">
-    <label for="devoured">Devour it</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Save it for later
-  </div>
-
-  <button class="btn btn-light" type="submit">Add Burger</button>
-</form>
 
 </div>

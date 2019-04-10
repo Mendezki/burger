@@ -1,9 +1,9 @@
 <li>
-	{{burger_name}}
+	<span><strong>{{burger_name}}</strong></span>
 	<br>
-	<button class="btn btn-light" id="changes" data-id="{{id}}" data-newDevoured="{{devoured}}">
-		{{#if devoured}}Save it for later!{{else}}Devour it!{{/if}}
+	<button class="btn btn-success" id="changes" data-id="{{id}}" data-newdevour="{{devoured}}">
+		{{#if devoured}}<i class="fas fa-shopping-bag"></i>{{else}}<i class="fas fa-cookie-bite"></i>{{/if}}
 	</button>
 	
-	<button class="btn btn-danger" id="delete-burger" data-id="{{this.id}}">Not anymore</button>
+	<button class="btn btn-danger" id="delete-burger" data-id="{{this.id}}"><i class="fas fa-trash"></i></button>
 </li>
