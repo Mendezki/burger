@@ -4,4 +4,4 @@
 ### MySQL
 ### Handlebars
 ### Express.js
-![](https://github.com/Mendezki/burger/tree/master/public/assets/img/burger.gif)
+![](https://github.com/Mendezki/burger/blob/master/public/assets/img/burger.gif)
